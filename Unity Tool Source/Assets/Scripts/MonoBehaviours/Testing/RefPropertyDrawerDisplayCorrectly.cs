@@ -7,5 +7,6 @@ namespace MonoBehaviours.Testing
 	{
 		public ColorRef colorVal;
 		public FloatRef floatVal;
+		public IntRef intVal;
 	}
 }

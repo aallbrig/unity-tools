@@ -333,6 +333,10 @@ MonoBehaviour:
     useConstant: 0
     constantValue: {fileID: 0}
     var: 0
+  intVal:
+    useConstant: 0
+    constantValue: {fileID: 0}
+    var: 0
 --- !u!4 &1662799785
 Transform:
   m_ObjectHideFlags: 0
