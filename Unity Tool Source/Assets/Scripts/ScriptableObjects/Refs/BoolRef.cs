@@ -3,5 +3,5 @@ using ScriptableObjects.Vars;
 
 namespace ScriptableObjects.Refs
 {
-	[Serializable] public class FloatRef : Ref<FloatVar, float> {}
+	[Serializable] public class BoolRef : Ref<BoolVar, bool> {}
 }

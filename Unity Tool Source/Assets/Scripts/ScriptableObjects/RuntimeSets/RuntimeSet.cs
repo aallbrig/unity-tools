@@ -7,6 +7,11 @@ namespace ScriptableObjects.RuntimeSets
 	{
 		public List<T> list = new List<T>();
 
+		private void Awake() => list.Clear();
+		private void OnEnable() => list.Clear();
+		private void OnDisable() => list.Clear();
+		private void OnDestroy() => list.Clear();
+
 		public void Add(T controller)
 		{
 			if (!list.Contains(controller)) list.Add(controller);
@@ -16,10 +21,5 @@ namespace ScriptableObjects.RuntimeSets
 		{
 			if (list.Contains(controller)) list.Remove(controller);
 		}
-
-		private void Awake() => list.Clear();
-		private void OnEnable() => list.Clear();
-		private void OnDisable() => list.Clear();
-		private void OnDestroy() => list.Clear();
 	}
 }

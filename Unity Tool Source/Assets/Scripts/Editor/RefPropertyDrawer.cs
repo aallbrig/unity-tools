@@ -7,6 +7,7 @@ namespace Editor
 	[CustomPropertyDrawer(typeof(StringRef))]
 	[CustomPropertyDrawer(typeof(FloatRef))]
 	[CustomPropertyDrawer(typeof(IntRef))]
+	[CustomPropertyDrawer(typeof(BoolRef))]
 	[CustomPropertyDrawer(typeof(Vector3Ref))]
 	[CustomPropertyDrawer(typeof(GameObjectRef))]
 	public class RefPropertyDrawer : PropertyDrawer
