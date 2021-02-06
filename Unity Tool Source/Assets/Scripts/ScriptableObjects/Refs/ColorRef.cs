@@ -7,7 +7,7 @@ namespace ScriptableObjects.Refs
 	[Serializable]
 	public class ColorRef
 	{
-		public bool useConstant = true;
+		public bool useConstant;
 		public ColorVar constantValue;
 		public Color var = Color.white;
 
