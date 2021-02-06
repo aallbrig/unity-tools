@@ -3,5 +3,5 @@ using ScriptableObjects.Vars;
 
 namespace ScriptableObjects.Refs
 {
-	[Serializable] public class IntRef : Ref<IntVar, int> {}
+	[Serializable] public class StringRef : Ref<StringVar, string> {}
 }

@@ -325,18 +325,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3113fe024e8445cebd6c4053fc760162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorVal:
+  colorRef:
     useConstant: 0
     constantValue: {fileID: 0}
     var: {r: 1, g: 1, b: 1, a: 1}
-  floatVal:
+  floatRef:
     useConstant: 0
     constantValue: {fileID: 0}
     var: 0
-  intVal:
+  intRef:
     useConstant: 0
     constantValue: {fileID: 0}
     var: 0
+  stringRef:
+    useConstant: 0
+    constantValue: {fileID: 0}
+    var: 
+  goRef:
+    useConstant: 0
+    constantValue: {fileID: 0}
+    var: {fileID: 0}
+  vector3Ref:
+    useConstant: 0
+    constantValue: {fileID: 0}
+    var: {x: 0, y: 0, z: 0}
 --- !u!4 &1662799785
 Transform:
   m_ObjectHideFlags: 0

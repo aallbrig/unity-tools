@@ -4,8 +4,12 @@ using UnityEngine;
 
 namespace Editor
 {
-	[CustomPropertyDrawer(typeof(ColorRef))]
-	public class ColorRefPropertyDrawer : PropertyDrawer
+	[CustomPropertyDrawer(typeof(StringRef))]
+	[CustomPropertyDrawer(typeof(FloatRef))]
+	[CustomPropertyDrawer(typeof(IntRef))]
+	[CustomPropertyDrawer(typeof(Vector3Ref))]
+	[CustomPropertyDrawer(typeof(GameObjectRef))]
+	public class RefPropertyDrawer : PropertyDrawer
 	{
 		private readonly string[] _popupOptions = {"Use Constant", "Use Variable"};
 		private GUIStyle _popupStyle;

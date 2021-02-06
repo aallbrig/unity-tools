@@ -4,5 +4,5 @@ using UnityEngine;
 
 namespace ScriptableObjects.Refs
 {
-	[Serializable] public class FloatRef : Ref<FloatVar, float> {}
+	[Serializable] public class GameObjectRef : Ref<GameObjectVar, GameObject> {}
 }

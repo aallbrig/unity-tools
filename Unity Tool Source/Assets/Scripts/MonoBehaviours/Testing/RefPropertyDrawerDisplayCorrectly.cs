@@ -5,8 +5,11 @@ namespace MonoBehaviours.Testing
 {
 	public class RefPropertyDrawerDisplayCorrectly : MonoBehaviour
 	{
-		public ColorRef colorVal;
-		public FloatRef floatVal;
-		public IntRef intVal;
+		public ColorRef colorRef;
+		public FloatRef floatRef;
+		public IntRef intRef;
+		public StringRef stringRef;
+		public GameObjectRef goRef;
+		public Vector3Ref vector3Ref;
 	}
 }
