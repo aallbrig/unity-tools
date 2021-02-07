@@ -9,21 +9,18 @@ namespace Tests.MonoBehaviours.EventListeners
     public class GameEventListenerTests
     {
         private GameEventListener _gameEventListener;
-        private GameObject _gameObject;
-        private GameEvent _testGameEvent;
+        private GameEvent _gameEvent;
         private UnityEvent _unityEvent;
 
         [SetUp]
         public void Setup()
         {
             _unityEvent = new UnityEvent();
-            _unityEvent.AddListener(() => Assert.Pass("Unity Event listener invoked"));
 
-            _testGameEvent = ScriptableObject.CreateInstance<GameEvent>();
+            _gameEvent = ScriptableObject.CreateInstance<GameEvent>();
 
-            _gameObject = new GameObject();
-            _gameEventListener = _gameObject.AddComponent<GameEventListener>();
-            _gameEventListener.soEvent = _testGameEvent;
+            _gameEventListener = new GameObject().AddComponent<GameEventListener>();
+            _gameEventListener.soEvent = _gameEvent;
             _gameEventListener.unityEvent = _unityEvent;
             _gameEventListener.OnEnable();
         }
@@ -33,12 +30,22 @@ namespace Tests.MonoBehaviours.EventListeners
         {
             _gameEventListener.OnDisable();
             _gameEventListener = null;
-            _gameObject = null;
-            _testGameEvent = null;
+            _gameEvent = null;
+            _unityEvent = null;
         }
 
-        [Test] public void GameEventListenerUnityEventCanBeInvokedManually() => _gameEventListener.OnEventBroadcast();
+        [Test]
+        public void GameEventListenerUnityEventCanBeInvokedManually()
+        {
+            _unityEvent.AddListener(() => Assert.Pass("Unity Event listener invoked"));
+            _gameEventListener.OnEventBroadcast();
+        }
 
-        [Test] public void GameEventListenerInvokesUnityEventOnGameEventBroadcast() => _testGameEvent.Broadcast();
+        [Test]
+        public void GameEventListenerInvokesUnityEventOnGameEventBroadcast()
+        {
+            _unityEvent.AddListener(() => Assert.Pass("Unity Event listener invoked"));
+            _gameEvent.Broadcast();
+        }
     }
 }
