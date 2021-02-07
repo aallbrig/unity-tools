@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace ScriptableObjects.FiniteStateMachines.GameState
 {
-	public abstract class Decision : ScriptableObject
-	{
-		public abstract bool Decide(GameStateController controller);
-	}
+    public abstract class Decision : ScriptableObject
+    {
+        public abstract bool Decide(GameStateController controller);
+    }
 }

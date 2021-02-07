@@ -1,17 +1,15 @@
-﻿using System.Collections;
-using MonoBehaviours.EventListeners;
+﻿using MonoBehaviours.EventListeners;
 using NUnit.Framework;
 using ScriptableObjects.Events;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.TestTools;
 
 namespace Tests.MonoBehaviours.EventListeners
 {
     public class GameEventListenerTests
     {
-        private GameObject _gameObject;
         private GameEventListener _gameEventListener;
+        private GameObject _gameObject;
         private GameEvent _testGameEvent;
         private UnityEvent _unityEvent;
 
@@ -39,16 +37,8 @@ namespace Tests.MonoBehaviours.EventListeners
             _testGameEvent = null;
         }
 
-        [Test]
-        public void GameEventListenerUnityEventCanBeInvokedManually()
-        {
-            _gameEventListener.OnEventBroadcast();
-        }
+        [Test] public void GameEventListenerUnityEventCanBeInvokedManually() => _gameEventListener.OnEventBroadcast();
 
-        [Test]
-        public void GameEventListenerInvokesUnityEventOnGameEventBroadcast()
-        {
-            _testGameEvent.Broadcast();
-        }
+        [Test] public void GameEventListenerInvokesUnityEventOnGameEventBroadcast() => _testGameEvent.Broadcast();
     }
 }
