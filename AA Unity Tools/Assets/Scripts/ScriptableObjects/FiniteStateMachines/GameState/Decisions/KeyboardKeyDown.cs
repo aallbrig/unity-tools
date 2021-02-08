@@ -1,4 +1,4 @@
-﻿using MonoBehaviours.Controllers;
+﻿using MonoBehaviours.StateMachines;
 using UnityEngine;
 
 namespace ScriptableObjects.FiniteStateMachines.GameState.Decisions
@@ -9,6 +9,6 @@ namespace ScriptableObjects.FiniteStateMachines.GameState.Decisions
     {
         public KeyCode keyCode;
 
-        public override bool Decide(GameStateController controller) => Input.GetKeyDown(keyCode);
+        public override bool Decide(GameStateContext context) => Input.GetKeyDown(keyCode);
     }
 }

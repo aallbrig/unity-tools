@@ -1,4 +1,4 @@
-﻿using MonoBehaviours.Controllers;
+﻿using MonoBehaviours.StateMachines;
 using ScriptableObjects.RuntimeSets;
 using UnityEngine;
 
@@ -9,6 +9,6 @@ namespace ScriptableObjects.FiniteStateMachines.GameState.Actions
     public class ClearGameObjectRuntimeSet : Action
     {
         public GameObjectRuntimeSet gameObjectRuntimeSet;
-        public override void Act(GameStateController controller) => gameObjectRuntimeSet.list.Clear();
+        public override void Act(GameStateContext context) => gameObjectRuntimeSet.list.Clear();
     }
 }

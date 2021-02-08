@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using MonoBehaviours.Controllers;
+using MonoBehaviours.StateMachines;
 using UnityEngine;
 
 namespace ScriptableObjects.FiniteStateMachines.GameState
@@ -12,20 +12,20 @@ namespace ScriptableObjects.FiniteStateMachines.GameState
         public List<Transition> transitions;
         [Header("On Leave")] public List<Action> leaveActions;
 
-        public void StartState(GameStateController controller) => startActions.ForEach(action => action.Act(controller));
+        public void StartState(GameStateContext context) => startActions.ForEach(action => action.Act(context));
 
-        public void UpdateState(GameStateController controller)
+        public void UpdateState(GameStateContext context)
         {
-            updateActions.ForEach(action => action.Act(controller));
-            CheckTransitions(controller);
+            updateActions.ForEach(action => action.Act(context));
+            CheckTransitions(context);
         }
 
-        public void LeaveState(GameStateController controller) => leaveActions.ForEach(action => action.Act(controller));
+        public void LeaveState(GameStateContext context) => leaveActions.ForEach(action => action.Act(context));
 
-        private void CheckTransitions(GameStateController controller) => transitions.ForEach(transition =>
+        private void CheckTransitions(GameStateContext context) => transitions.ForEach(transition =>
         {
-            if (transition.decision.Decide(controller))
-                controller.TransitionToState(transition.trueState);
+            if (transition.decision.Decide(context))
+                context.TransitionToState(transition.trueState);
         });
     }
 }

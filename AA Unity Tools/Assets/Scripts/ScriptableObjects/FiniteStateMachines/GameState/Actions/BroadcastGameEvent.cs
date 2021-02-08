@@ -1,4 +1,4 @@
-﻿using MonoBehaviours.Controllers;
+﻿using MonoBehaviours.StateMachines;
 using ScriptableObjects.Events;
 using UnityEngine;
 
@@ -9,6 +9,6 @@ namespace ScriptableObjects.FiniteStateMachines.GameState.Actions
     public class BroadcastGameEvent : Action
     {
         public GameEvent gameEvent;
-        public override void Act(GameStateController controller) => gameEvent.Broadcast();
+        public override void Act(GameStateContext context) => gameEvent.Broadcast();
     }
 }

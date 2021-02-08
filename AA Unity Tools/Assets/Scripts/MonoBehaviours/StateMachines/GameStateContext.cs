@@ -1,9 +1,9 @@
 ﻿using ScriptableObjects.FiniteStateMachines.GameState;
 using UnityEngine;
 
-namespace MonoBehaviours.Controllers
+namespace MonoBehaviours.StateMachines
 {
-    public class GameStateController : MonoBehaviour
+    public class GameStateContext : MonoBehaviour
     {
         [Header("Finite State Machine")] public State currentState;
         private void Start() => currentState.StartState(this);
