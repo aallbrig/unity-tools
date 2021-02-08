@@ -10,6 +10,7 @@ namespace Editor
     [CustomPropertyDrawer(typeof(BoolRef))]
     [CustomPropertyDrawer(typeof(Vector3Ref))]
     [CustomPropertyDrawer(typeof(GameObjectRef))]
+    [CustomPropertyDrawer(typeof(ColorRef))]
     public class RefPropertyDrawer : PropertyDrawer
     {
         private readonly string[] _popupOptions = {"Use Constant", "Use Variable"};
