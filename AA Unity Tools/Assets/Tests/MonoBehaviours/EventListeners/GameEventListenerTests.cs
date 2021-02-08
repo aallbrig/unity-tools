@@ -8,8 +8,8 @@ namespace Tests.MonoBehaviours.EventListeners
 {
     public class GameEventListenerTests
     {
-        private GameEventListener _gameEventListener;
         private GameEvent _gameEvent;
+        private GameEventListener _gameEventListener;
         private UnityEvent _unityEvent;
 
         [SetUp]
