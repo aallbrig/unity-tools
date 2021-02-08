@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b42e50b0225c4eb2af93ea409b8ac30f, type: 3}
-  m_Name: UI foreground panel color
+  m_Name: Primary button pressed color
   m_EditorClassIdentifier: 
-  value: {r: 0.32352924, g: 0, b: 1, a: 1}
+  value: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
