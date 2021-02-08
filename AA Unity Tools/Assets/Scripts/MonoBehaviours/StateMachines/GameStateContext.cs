@@ -1,5 +1,4 @@
-﻿using ScriptableObjects.Events;
-using ScriptableObjects.FiniteStateMachines.GameState;
+﻿using ScriptableObjects.FiniteStateMachines.GameState;
 using UnityEngine;
 
 namespace MonoBehaviours.StateMachines
