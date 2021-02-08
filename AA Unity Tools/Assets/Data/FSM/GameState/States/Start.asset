@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552aef1ad3a143b5944fa0dfe433c0d5, type: 3}
   m_Name: Start
   m_EditorClassIdentifier: 
-  startActions: []
+  startActions:
+  - {fileID: 11400000, guid: 8afafab413765654d9b6d3fae44bdeba, type: 2}
   updateActions: []
   transitions: []
-  leaveActions: []
+  leaveActions:
+  - {fileID: 11400000, guid: 8d18ad0e347ff3a408350f09810d9eba, type: 2}

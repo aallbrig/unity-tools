@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552aef1ad3a143b5944fa0dfe433c0d5, type: 3}
   m_Name: Game over
   m_EditorClassIdentifier: 
-  startActions: []
+  startActions:
+  - {fileID: 11400000, guid: 5ba057751f2073545b7967ec0fbfcf77, type: 2}
   updateActions: []
   transitions: []
-  leaveActions: []
+  leaveActions:
+  - {fileID: 11400000, guid: 8ecd94704bbd6924aae0993641c5bdb3, type: 2}

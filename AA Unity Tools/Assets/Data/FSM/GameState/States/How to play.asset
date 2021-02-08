@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 552aef1ad3a143b5944fa0dfe433c0d5, type: 3}
-  m_Name: Game running
+  m_Name: How to play
   m_EditorClassIdentifier: 
   startActions:
-  - {fileID: 11400000, guid: 016c2ff10bb79724186e930e45a15233, type: 2}
+  - {fileID: 11400000, guid: 913b8340766f955438bfee629beceeb2, type: 2}
   updateActions: []
   transitions: []
   leaveActions:
-  - {fileID: 11400000, guid: e01fd42afc39acf4497ede8a8bb88009, type: 2}
+  - {fileID: 11400000, guid: 8c2ee10029a85a940a5b27934d021a71, type: 2}

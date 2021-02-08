@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 552aef1ad3a143b5944fa0dfe433c0d5, type: 3}
-  m_Name: Game running
+  m_Name: Credits
   m_EditorClassIdentifier: 
   startActions:
-  - {fileID: 11400000, guid: 016c2ff10bb79724186e930e45a15233, type: 2}
+  - {fileID: 11400000, guid: 7774133dab6f0094fa2de8a59fc26607, type: 2}
   updateActions: []
   transitions: []
   leaveActions:
-  - {fileID: 11400000, guid: e01fd42afc39acf4497ede8a8bb88009, type: 2}
+  - {fileID: 11400000, guid: 3669e43287096d64f807f0153cc8dd17, type: 2}
