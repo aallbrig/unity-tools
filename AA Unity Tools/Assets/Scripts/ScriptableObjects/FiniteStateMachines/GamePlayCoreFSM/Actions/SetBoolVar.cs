@@ -11,6 +11,6 @@ namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.Actions
         public BoolVar targetBoolVar;
         public BoolRef boolRef;
 
-        public override void Act(GameStateContext context) => targetBoolVar.value = boolRef.Value;
+        public override void Act(GamePlayCoreContext context) => targetBoolVar.value = boolRef.Value;
     }
 }

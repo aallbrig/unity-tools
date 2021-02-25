@@ -5,6 +5,6 @@ namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM
 {
     public abstract class Action : ScriptableObject
     {
-        public abstract void Act(GameStateContext context);
+        public abstract void Act(GamePlayCoreContext context);
     }
 }

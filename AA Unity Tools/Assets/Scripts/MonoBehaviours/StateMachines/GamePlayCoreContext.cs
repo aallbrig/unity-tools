@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MonoBehaviours.StateMachines
 {
-    public class GameStateContext : MonoBehaviour
+    public class GamePlayCoreContext : MonoBehaviour
     {
         [Header("Finite State Machine")] public State currentState;
 

@@ -5,6 +5,6 @@ namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM
 {
     public abstract class Decision : ScriptableObject
     {
-        public abstract bool Decide(GameStateContext context);
+        public abstract bool Decide(GamePlayCoreContext context);
     }
 }

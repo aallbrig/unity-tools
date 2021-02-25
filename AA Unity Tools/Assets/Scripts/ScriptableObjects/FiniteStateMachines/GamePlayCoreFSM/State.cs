@@ -12,17 +12,17 @@ namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM
         public List<Transition> transitions;
         [Header("On Leave")] public List<Action> leaveActions;
 
-        public void StartState(GameStateContext context) => startActions.ForEach(action => action.Act(context));
+        public void StartState(GamePlayCoreContext context) => startActions.ForEach(action => action.Act(context));
 
-        public void UpdateState(GameStateContext context)
+        public void UpdateState(GamePlayCoreContext context)
         {
             updateActions.ForEach(action => action.Act(context));
             CheckTransitions(context);
         }
 
-        public void LeaveState(GameStateContext context) => leaveActions.ForEach(action => action.Act(context));
+        public void LeaveState(GamePlayCoreContext context) => leaveActions.ForEach(action => action.Act(context));
 
-        private void CheckTransitions(GameStateContext context) => transitions.ForEach(transition =>
+        private void CheckTransitions(GamePlayCoreContext context) => transitions.ForEach(transition =>
         {
             if (transition.decision.Decide(context))
                 context.TransitionToState(transition.trueState);

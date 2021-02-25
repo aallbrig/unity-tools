@@ -9,6 +9,6 @@ namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.Decisions
     {
         public KeyCode keyCode;
 
-        public override bool Decide(GameStateContext context) => Input.GetKeyDown(keyCode);
+        public override bool Decide(GamePlayCoreContext context) => Input.GetKeyDown(keyCode);
     }
 }
