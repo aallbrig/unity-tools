@@ -1,7 +1,7 @@
 ﻿using ScriptableObjects.Refs;
 using UnityEngine;
 
-namespace MonoBehaviours.Testing
+namespace MonoBehaviours.ExploratoryTesting
 {
     public class RefPropertyDrawerDisplayCorrectly : MonoBehaviour
     {

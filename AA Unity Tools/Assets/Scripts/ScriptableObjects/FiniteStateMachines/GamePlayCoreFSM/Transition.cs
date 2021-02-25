@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ScriptableObjects.FiniteStateMachines.GameState
+namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM
 {
     [Serializable]
     public class Transition

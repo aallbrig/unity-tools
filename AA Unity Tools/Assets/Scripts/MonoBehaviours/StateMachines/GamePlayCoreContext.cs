@@ -1,4 +1,4 @@
-﻿using ScriptableObjects.FiniteStateMachines.GameState;
+﻿using ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM;
 using UnityEngine;
 
 namespace MonoBehaviours.StateMachines

@@ -2,7 +2,7 @@
 using ScriptableObjects.RuntimeSets;
 using UnityEngine;
 
-namespace ScriptableObjects.FiniteStateMachines.GameState.Actions
+namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.Actions
 {
     [CreateAssetMenu(fileName = "new clear runtime set", menuName = "AATools/GameState/Actions/ClearGameObjectRuntimeSet",
         order = 0)]

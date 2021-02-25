@@ -3,7 +3,7 @@ using ScriptableObjects.Refs;
 using ScriptableObjects.Vars;
 using UnityEngine;
 
-namespace ScriptableObjects.FiniteStateMachines.GameState.Actions
+namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.Actions
 {
     [CreateAssetMenu(fileName = "new SetBoolVar action", menuName = "AATools/GameState/Actions/SetBoolVar", order = 0)]
     public class SetBoolVar : Action

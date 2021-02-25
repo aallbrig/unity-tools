@@ -2,7 +2,7 @@
 using MonoBehaviours.StateMachines;
 using UnityEngine;
 
-namespace ScriptableObjects.FiniteStateMachines.GameState
+namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM
 {
     [CreateAssetMenu(fileName = "new game state", menuName = "AATools/GameState/State", order = 0)]
     public class State : ScriptableObject
