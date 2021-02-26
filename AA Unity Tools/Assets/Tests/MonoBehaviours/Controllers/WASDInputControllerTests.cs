@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Tests.MonoBehaviours.Controllers
 {
-    public class WASDInputControllerTest
+    public class WASDInputControllerTests
     {
         [Test]
         public void WASDInputController_ScriptCanBeAttachedToGameObject()
