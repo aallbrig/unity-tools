@@ -27,7 +27,7 @@ namespace Tests.MonoBehaviours.EventProducers
 
             // Act
             sceneEventProducer.OnDisable();
-            
+
             // Assert
             Assert.True(eventListenerCalled);
         }

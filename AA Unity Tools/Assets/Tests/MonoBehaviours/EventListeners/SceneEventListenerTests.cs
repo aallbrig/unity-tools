@@ -8,10 +8,6 @@ namespace Tests.MonoBehaviours.EventListeners
 {
     public class SceneEventListenerTests
     {
-        private SceneEvent _gameEvent;
-        private SceneEventListener _gameEventListener;
-        private UnityEvent _unityEvent;
-
         [Test]
         public void SceneEventListenerScriptExposesFunctionForWhenInUnityEditor()
         {
