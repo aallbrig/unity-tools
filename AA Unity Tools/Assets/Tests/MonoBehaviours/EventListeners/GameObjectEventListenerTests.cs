@@ -7,50 +7,94 @@ namespace Tests.MonoBehaviours.EventListeners
 {
     public class GameObjectEventListenerTests
     {
-        private GameObjectEvent _gameObjectEvent;
-        private GameObjectEventListener _gameObjectEventListener;
-        private GameObjectEventUnityEvent _unityEvent;
 
-        [SetUp]
-        public void Setup()
+        [Test]
+        public void ScriptEventListenerHandleFunction_UnityEventCanBeInvokedDirectly()
         {
-            _unityEvent = new GameObjectEventUnityEvent();
+            // Arrange
+            var eventListenerCalled = false;
+            var unityEvent = new GameObjectEventUnityEvent();
+            var gameObjectEvent = ScriptableObject.CreateInstance<GameObjectEvent>();
+            var gameObjectEventListener = new GameObject().AddComponent<GameObjectEventListener>();
+            gameObjectEventListener.soEvent = gameObjectEvent;
+            gameObjectEventListener.unityEvent = unityEvent;
+            gameObjectEventListener.OnEnable();
 
-            _gameObjectEvent = ScriptableObject.CreateInstance<GameObjectEvent>();
+            var dummyGameObject = new GameObject();
+            unityEvent.AddListener(gameObject => eventListenerCalled = true);
 
-            _gameObjectEventListener = new GameObject().AddComponent<GameObjectEventListener>();
-            _gameObjectEventListener.soEvent = _gameObjectEvent;
-            _gameObjectEventListener.unityEvent = _unityEvent;
-            _gameObjectEventListener.OnEnable();
-        }
+            // Act
+            gameObjectEventListener.OnEventBroadcast(dummyGameObject);
 
-        [TearDown]
-        public void TearDown()
-        {
-            _gameObjectEventListener.OnDisable();
-            _gameObjectEventListener = null;
-            _gameObjectEvent = null;
-            _unityEvent = null;
+            // Assert
+            Assert.True(eventListenerCalled);
         }
 
         [Test]
-        public void UnityEventCanBeInvokedDirectly()
+        public void ScriptEventListenerHandleFunction_CalledWithExpectedArgument()
         {
+            // Arrange
+            GameObject gameObjectArgument = null;
+            var unityEvent = new GameObjectEventUnityEvent();
+            var gameObjectEvent = ScriptableObject.CreateInstance<GameObjectEvent>();
+            var gameObjectEventListener = new GameObject().AddComponent<GameObjectEventListener>();
+            gameObjectEventListener.soEvent = gameObjectEvent;
+            gameObjectEventListener.unityEvent = unityEvent;
+            gameObjectEventListener.OnEnable();
             var dummyGameObject = new GameObject();
-            _unityEvent.AddListener(gameObject =>
-                Assert.AreSame(dummyGameObject, gameObject, "GameObject is passed in as a parameter"));
 
-            _gameObjectEventListener.OnEventBroadcast(dummyGameObject);
+            unityEvent.AddListener(gameObject => gameObjectArgument = gameObject);
+
+            // Act
+            gameObjectEventListener.OnEventBroadcast(dummyGameObject);
+
+            // Assert
+            Assert.AreSame(dummyGameObject, gameObjectArgument, "GameObject is passed in as a parameter");
         }
 
         [Test]
-        public void GameEventListenerInvokesUnityEventOnGameEventBroadcast()
+        public void OnGameObjectEventBroadcast_GameEventListenerInvokesUnityEventOnGameEventBroadcast()
         {
+            // Arrange
+            GameObject gameObjectArgument = null;
+            var eventListenerCalled = false;
+            var unityEvent = new GameObjectEventUnityEvent();
+            var gameObjectEvent = ScriptableObject.CreateInstance<GameObjectEvent>();
+            var gameObjectEventListener = new GameObject().AddComponent<GameObjectEventListener>();
+            gameObjectEventListener.soEvent = gameObjectEvent;
+            gameObjectEventListener.unityEvent = unityEvent;
+            gameObjectEventListener.OnEnable();
             var dummyGameObject = new GameObject();
-            _unityEvent.AddListener(gameObject =>
-                Assert.AreSame(dummyGameObject, gameObject, "GameObject is passed in as a parameter"));
 
-            _gameObjectEvent.Broadcast(dummyGameObject);
+            unityEvent.AddListener(gameObject => eventListenerCalled = true);
+
+            // Act
+            gameObjectEvent.Broadcast(dummyGameObject);
+
+            // Assert
+            Assert.True(eventListenerCalled);
+        }
+
+        [Test]
+        public void OnGameObjectEventBroadcast_CalledWithExpectedArgument()
+        {
+            // Arrange
+            GameObject gameObjectArgument = null;
+            var unityEvent = new GameObjectEventUnityEvent();
+            var gameObjectEvent = ScriptableObject.CreateInstance<GameObjectEvent>();
+            var gameObjectEventListener = new GameObject().AddComponent<GameObjectEventListener>();
+            gameObjectEventListener.soEvent = gameObjectEvent;
+            gameObjectEventListener.unityEvent = unityEvent;
+            gameObjectEventListener.OnEnable();
+            var dummyGameObject = new GameObject();
+
+            unityEvent.AddListener(gameObject => gameObjectArgument = gameObject);
+
+            // Act
+            gameObjectEvent.Broadcast(dummyGameObject);
+
+            // Assert
+            Assert.AreSame(dummyGameObject, gameObjectArgument, "GameObject is passed in as a parameter");
         }
     }
 }
