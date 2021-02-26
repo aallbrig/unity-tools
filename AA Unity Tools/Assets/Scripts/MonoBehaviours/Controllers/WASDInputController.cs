@@ -1,5 +1,4 @@
-﻿using System;
-using Interfaces;
+﻿using Interfaces;
 using UnityEngine;
 
 namespace MonoBehaviours.Controllers
@@ -17,16 +16,7 @@ namespace MonoBehaviours.Controllers
 
         public IMoveable Move { get; set; }
 
-        private void CacheInputComponent() => Input = (inputTarget != null ? inputTarget : gameObject).GetComponent<IInput>();
-        private void CacheMoveComponent() => Move = (moveTarget != null ? moveTarget : gameObject).GetComponent<IMoveable>();
-
         private void Start()
-        {
-            CacheInputComponent();
-            CacheMoveComponent();
-        }
-
-        private void OnEnable()
         {
             CacheInputComponent();
             CacheMoveComponent();
@@ -43,5 +33,14 @@ namespace MonoBehaviours.Controllers
             var direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             Move.Move(direction);
         }
+
+        private void OnEnable()
+        {
+            CacheInputComponent();
+            CacheMoveComponent();
+        }
+
+        private void CacheInputComponent() => Input = (inputTarget != null ? inputTarget : gameObject).GetComponent<IInput>();
+        private void CacheMoveComponent() => Move = (moveTarget != null ? moveTarget : gameObject).GetComponent<IMoveable>();
     }
 }
