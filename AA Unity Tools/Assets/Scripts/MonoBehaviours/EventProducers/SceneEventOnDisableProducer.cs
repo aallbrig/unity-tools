@@ -6,8 +6,8 @@ namespace MonoBehaviours.EventProducers
 {
     public class SceneEventOnDisableProducer : MonoBehaviour
     {
-        public List<SceneEvent> sceneEvents;
+        public List<SceneEvent> sceneEvents = new List<SceneEvent>();
 
-        private void OnDisable() => sceneEvents.ForEach(sceneEvent => sceneEvent.Broadcast());
+        public void OnDisable() => sceneEvents.ForEach(sceneEvent => sceneEvent.Broadcast());
     }
 }
