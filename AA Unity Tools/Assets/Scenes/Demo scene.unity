@@ -723,8 +723,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: -0.10097204, y: 0.8973528, z: -0.2734688, w: -0.33132684}
+  m_LocalPosition: {x: 7.4420037, y: 4.993825, z: 6.5375113}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1187,6 +1187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1756596449}
   - component: {fileID: 1756596450}
+  - component: {fileID: 1756596451}
   m_Layer: 0
   m_Name: WASD Input Controller
   m_TagString: Untagged
@@ -1220,7 +1221,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de8ad4733590fe46b84af9ebaf4b635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputTarget: {fileID: 1756596448}
   moveTarget: {fileID: 1863353854}
+--- !u!114 &1756596451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756596448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830417ae56944eb2b6d070515e241f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1780382837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,6 +1310,7 @@ GameObject:
   - component: {fileID: 1862577658}
   - component: {fileID: 1862577657}
   - component: {fileID: 1862577655}
+  - component: {fileID: 1862577656}
   m_Layer: 0
   m_Name: Transform Movement
   m_TagString: Untagged
@@ -1316,6 +1331,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+--- !u!114 &1862577656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862577654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 830417ae56944eb2b6d070515e241f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &1862577657
 CapsuleCollider:
   m_ObjectHideFlags: 0
