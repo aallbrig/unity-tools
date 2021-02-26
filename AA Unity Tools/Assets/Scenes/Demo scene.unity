@@ -911,6 +911,9 @@ GameObject:
   - component: {fileID: 1080063704}
   - component: {fileID: 1080063705}
   - component: {fileID: 1080063706}
+  - component: {fileID: 1080063707}
+  - component: {fileID: 1080063709}
+  - component: {fileID: 1080063708}
   m_Layer: 0
   m_Name: Example timeline animation
   m_TagString: Untagged
@@ -964,6 +967,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70610f3d37b14ce88dbc713dc21cdbbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1080063707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080063703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c55865b1f5245798399c1ac8303f59e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvents:
+  - {fileID: 11400000, guid: 525b03bb9cfec854eaafc0e4d2e968ea, type: 2}
+--- !u!114 &1080063708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080063703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52eef6cdcbe4f44bc546d6c1cbbbd05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1080063709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080063703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2cc9cb6dec4bdda95b26ee68fc328d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soEvent: {fileID: 11400000, guid: 525b03bb9cfec854eaafc0e4d2e968ea, type: 2}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1080063708}
+        m_MethodName: Log
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Animation timeline has ended!
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1106723672
 GameObject:
   m_ObjectHideFlags: 0

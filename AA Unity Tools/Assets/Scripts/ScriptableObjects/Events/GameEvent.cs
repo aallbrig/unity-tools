@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using MonoBehaviours.EventListeners;
+using Interfaces;
 using UnityEngine;
 
 namespace ScriptableObjects.Events
@@ -7,7 +7,7 @@ namespace ScriptableObjects.Events
     [CreateAssetMenu(fileName = "new game event", menuName = "AATools/Events/GameEvent")]
     public class GameEvent : ScriptableObject
     {
-        private readonly List<GameEventListener> _listeners = new List<GameEventListener>();
+        private readonly List<IGameEventListener> _listeners = new List<IGameEventListener>();
 
         public void Broadcast()
         {
@@ -15,13 +15,13 @@ namespace ScriptableObjects.Events
                 _listeners[i].OnEventBroadcast();
         }
 
-        public void RegisterListener(GameEventListener listener)
+        public void RegisterListener(IGameEventListener listener)
         {
             if (!_listeners.Contains(listener))
                 _listeners.Add(listener);
         }
 
-        public void UnregisterListener(GameEventListener listener)
+        public void UnregisterListener(IGameEventListener listener)
         {
             if (_listeners.Contains(listener))
                 _listeners.Remove(listener);

@@ -1,10 +1,11 @@
-﻿using ScriptableObjects.Events;
+﻿using Interfaces;
+using ScriptableObjects.Events;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace MonoBehaviours.EventListeners
 {
-    public class GameEventListener : MonoBehaviour
+    public class GameEventListener : MonoBehaviour, IGameEventListener
     {
         public GameEvent soEvent;
         public UnityEvent unityEvent;
