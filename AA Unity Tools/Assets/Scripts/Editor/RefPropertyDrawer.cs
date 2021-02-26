@@ -1,4 +1,5 @@
-﻿using ScriptableObjects.Refs;
+﻿#if (UNITY_EDITOR)
+using ScriptableObjects.Refs;
 using UnityEditor;
 using UnityEngine;
 
@@ -59,3 +60,4 @@ namespace Editor
         }
     }
 }
+#endif

@@ -47,7 +47,7 @@ namespace Tests.MonoBehaviours.EventListeners
 
             // Assertion
             unityEvent.AddListener(() => Assert.Pass("Unity Event listener invoked"));
-            
+
             // Action
             sceneEvent.Broadcast();
         }

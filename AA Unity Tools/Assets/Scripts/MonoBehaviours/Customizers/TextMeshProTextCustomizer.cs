@@ -9,7 +9,7 @@ namespace MonoBehaviours.Customizers
     {
         public StringRef text;
         public ColorRef fontColor;
-        public IntRef fontSize = new IntRef{var = 36};
+        public IntRef fontSize = new IntRef {var = 36};
         private TextMeshProUGUI _text;
 
         private void Start() => _text = GetComponent<TextMeshProUGUI>();
