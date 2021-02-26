@@ -6,7 +6,7 @@ namespace MonoBehaviours.Controllers
     public class WASDInputController : MonoBehaviour
     {
         [Tooltip("Optional target to receive movement input from (default: self)")]
-        public GameObject inputTarget;
+        public GameObject inputSource;
 
         [Tooltip("Optional target to apply WASD movement (default: self)")]
         public GameObject moveTarget;
@@ -40,7 +40,7 @@ namespace MonoBehaviours.Controllers
             CacheMoveComponent();
         }
 
-        private void CacheInputComponent() => Input = (inputTarget != null ? inputTarget : gameObject).GetComponent<IInput>();
+        private void CacheInputComponent() => Input = (inputSource != null ? inputSource : gameObject).GetComponent<IInput>();
         private void CacheMoveComponent() => Move = (moveTarget != null ? moveTarget : gameObject).GetComponent<IMoveable>();
     }
 }

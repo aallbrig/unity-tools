@@ -5,49 +5,63 @@ namespace MonoBehaviours.Controllers
 {
     public class ThirdPersonController : MonoBehaviour
     {
-        // WASD Input controller either works on self or a target
+        [Tooltip("Optional target to receive movement input from (default: self)")]
+        public GameObject inputSource;
+
         [Tooltip("Optional target to apply WASD movement (default: self)")]
         public GameObject moveTarget;
 
         [Tooltip("Optional target to apply rotation movement (default: self)")]
         public GameObject rotateTarget;
 
-        [Tooltip("Optional target to receive movement input from (default: self)")]
-        public GameObject inputTarget;
+        public IInput Input { get; set; }
 
-        private IInput _input;
+        public IMoveable Move { get; set; }
 
-        private IMoveable _moveController;
-        private IRotateable _rotateController;
+        public IRotateable Rotate { get; set; }
 
         private void Start()
         {
-            _moveController = (moveTarget != null ? moveTarget : gameObject).GetComponent<IMoveable>();
-            _rotateController = (rotateTarget != null ? rotateTarget : gameObject).GetComponent<IRotateable>();
-            _input = (inputTarget != null ? inputTarget : gameObject).GetComponent<IInput>();
+            CacheInputComponent();
+            CacheMoveComponent();
+            CacheRotateComponent();
         }
 
-        private void Update()
+        public void Update()
         {
-            if (_moveController != null)
+            if (Input == null) Debug.LogWarning("[Third Person Controller] IInput interface is null");
+
+            if (Move != null && Input != null)
             {
-                var direction = new Vector3(0, 0, _input.GetAxis("Vertical"));
-                _moveController.Move(direction);
+                var direction = new Vector3(0, 0, Input.GetAxis("Vertical"));
+                Move.Move(direction);
             }
             else
             {
-                Debug.LogWarning("[WASD Input] IMoveable interface should be implemented");
+                Debug.LogWarning("[Third Person Controller] IMoveable interface is null");
             }
 
-            if (_rotateController != null)
+            if (Rotate != null && Input != null)
             {
-                var rotation = new Vector3(0, _input.GetAxis("Horizontal"), 0);
-                _rotateController.Rotate(rotation);
+                var rotation = new Vector3(0, Input.GetAxis("Horizontal"), 0);
+                Rotate.Rotate(rotation);
             }
             else
             {
-                Debug.LogWarning("[WASD Input] IRotateable interface should be implemented");
+                Debug.LogWarning("[Third Person Controller] IRotateable interface is null");
             }
         }
+
+        private void OnEnable()
+        {
+            CacheInputComponent();
+            CacheMoveComponent();
+            CacheRotateComponent();
+        }
+
+        private void CacheInputComponent() => Input = (inputSource != null ? inputSource : gameObject).GetComponent<IInput>();
+        private void CacheMoveComponent() => Move = (moveTarget != null ? moveTarget : gameObject).GetComponent<IMoveable>();
+        private void CacheRotateComponent() =>
+            Rotate = (rotateTarget != null ? rotateTarget : gameObject).GetComponent<IRotateable>();
     }
 }
