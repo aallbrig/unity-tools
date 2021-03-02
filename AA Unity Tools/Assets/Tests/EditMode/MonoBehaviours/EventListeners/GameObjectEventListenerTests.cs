@@ -3,7 +3,7 @@ using NUnit.Framework;
 using ScriptableObjects.Events;
 using UnityEngine;
 
-namespace Tests.MonoBehaviours.EventListeners
+namespace Tests.EditMode.MonoBehaviours.EventListeners
 {
     public class GameObjectEventListenerTests
     {

@@ -4,7 +4,7 @@ using NSubstitute;
 using NUnit.Framework;
 using UnityEngine;
 
-namespace Tests.MonoBehaviours.Controllers
+namespace Tests.EditMode.MonoBehaviours.Controllers
 {
     public class ThirdPersonControllerTests
     {

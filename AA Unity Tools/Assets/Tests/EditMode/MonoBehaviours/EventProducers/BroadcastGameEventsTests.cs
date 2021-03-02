@@ -5,7 +5,7 @@ using NUnit.Framework;
 using ScriptableObjects.Events;
 using UnityEngine;
 
-namespace Tests.MonoBehaviours.EventProducers
+namespace Tests.EditMode.MonoBehaviours.EventProducers
 {
     public class BroadcastGameEventsTests
     {

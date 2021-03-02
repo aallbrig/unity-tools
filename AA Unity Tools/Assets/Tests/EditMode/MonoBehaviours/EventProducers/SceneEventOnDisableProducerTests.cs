@@ -5,9 +5,9 @@ using ScriptableObjects.Events;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Tests.MonoBehaviours.EventProducers
+namespace Tests.EditMode.MonoBehaviours.EventProducers
 {
-    public class SceneEventOnEnableProducerTests : MonoBehaviour
+    public class SceneEventOnDisableProducerTests : MonoBehaviour
     {
         [Test]
         public void SceneEventIsBroadcastOnDisable()
@@ -15,7 +15,7 @@ namespace Tests.MonoBehaviours.EventProducers
             // Arrange
             var eventListenerCalled = false;
             var sceneEvent = ScriptableObject.CreateInstance<SceneEvent>();
-            var sceneEventProducer = new GameObject().AddComponent<SceneEventOnEnableProducer>();
+            var sceneEventProducer = new GameObject().AddComponent<SceneEventOnDisableProducer>();
             sceneEventProducer.sceneEvents.Add(sceneEvent);
 
             var sceneEventListener = new GameObject().AddComponent<SceneEventListener>();
@@ -26,7 +26,7 @@ namespace Tests.MonoBehaviours.EventProducers
             sceneEventListener.OnEnable();
 
             // Act
-            sceneEventProducer.OnEnable();
+            sceneEventProducer.OnDisable();
 
             // Assert
             Assert.True(eventListenerCalled);

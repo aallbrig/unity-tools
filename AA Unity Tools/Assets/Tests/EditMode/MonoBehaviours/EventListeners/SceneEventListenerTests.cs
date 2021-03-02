@@ -4,7 +4,7 @@ using ScriptableObjects.Events;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Tests.MonoBehaviours.EventListeners
+namespace Tests.EditMode.MonoBehaviours.EventListeners
 {
     public class SceneEventListenerTests
     {
