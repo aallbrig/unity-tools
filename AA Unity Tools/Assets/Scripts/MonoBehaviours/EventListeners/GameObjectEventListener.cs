@@ -1,4 +1,5 @@
 ﻿using System;
+using Interfaces;
 using ScriptableObjects.Events;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,7 +8,7 @@ namespace MonoBehaviours.EventListeners
 {
     [Serializable] public class GameObjectEventUnityEvent : UnityEvent<GameObject> {}
 
-    public class GameObjectEventListener : MonoBehaviour
+    public class GameObjectEventListener : MonoBehaviour, IGameObjectEventListener<GameObject>
     {
         public GameObjectEvent soEvent;
         public GameObjectEventUnityEvent unityEvent;

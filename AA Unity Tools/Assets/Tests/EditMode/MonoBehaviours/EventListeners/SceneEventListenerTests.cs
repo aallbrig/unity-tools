@@ -12,40 +12,39 @@ namespace Tests.EditMode.MonoBehaviours.EventListeners
         public void SceneEventListenerScriptExposesFunctionForWhenInUnityEditor()
         {
             // Setup
+            var called = false;
             var sceneEventListener = new GameObject().AddComponent<SceneEventListener>();
-
-            var sceneEvent = ScriptableObject.CreateInstance<SceneEvent>();
             var unityEvent = new UnityEvent();
 
-            sceneEventListener.soEvent = sceneEvent;
             sceneEventListener.unityEvent = unityEvent;
-
-            // Assertion
-            unityEvent.AddListener(() => Assert.Pass("Unity Event listener invoked"));
+            unityEvent.AddListener(() => called = true);
 
             // Action
-            sceneEventListener.OnEnable();
             sceneEventListener.OnEventBroadcast();
-            sceneEventListener.OnDisable();
+
+            // Assert
+            Assert.IsTrue(called);
         }
 
         [Test]
         public void SceneEventListenerRespondsToSceneEventBroadcast()
         {
-            // Setup
+            // Arrange
+            var called = false;
             var sceneEventListener = new GameObject().AddComponent<SceneEventListener>();
-
             var sceneEvent = ScriptableObject.CreateInstance<SceneEvent>();
             var unityEvent = new UnityEvent();
 
             sceneEventListener.soEvent = sceneEvent;
             sceneEventListener.unityEvent = unityEvent;
-
-            // Assertion
-            unityEvent.AddListener(() => Assert.Pass("Unity Event listener invoked"));
+            unityEvent.AddListener(() => called = true);
+            sceneEvent.RegisterListener(sceneEventListener);
 
             // Action
             sceneEvent.Broadcast();
+
+            // Assert
+            Assert.IsTrue(called);
         }
     }
 }

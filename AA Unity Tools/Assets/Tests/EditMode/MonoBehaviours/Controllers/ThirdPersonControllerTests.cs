@@ -9,11 +9,8 @@ namespace Tests.EditMode.MonoBehaviours.Controllers
     public class ThirdPersonControllerTests
     {
         [Test]
-        public void ThirdPersonController_ScriptCanBeAttachedToGameObject()
-        {
-            var script = new GameObject().AddComponent<ThirdPersonController>();
-            Assert.NotNull(script);
-        }
+        public void Script_Exists() =>
+            Assert.NotNull(new GameObject().AddComponent<ThirdPersonController>());
 
         [Test]
         public void ThirdPersonController_MoveInterface_ReceivesVerticalInput()
@@ -21,12 +18,11 @@ namespace Tests.EditMode.MonoBehaviours.Controllers
             // Arrange
             var gameObject = new GameObject();
             var script = gameObject.AddComponent<ThirdPersonController>();
-
             var input = Substitute.For<IInput>();
-            var verticalValue = 1337;
-            input.GetAxis("Vertical").Returns(verticalValue);
-
             var move = Substitute.For<IMoveable>();
+            var verticalValue = 1337;
+
+            input.GetAxis("Vertical").Returns(verticalValue);
             script.Move = move;
             script.Input = input;
 
@@ -43,12 +39,11 @@ namespace Tests.EditMode.MonoBehaviours.Controllers
             // Arrange
             var gameObject = new GameObject();
             var script = gameObject.AddComponent<ThirdPersonController>();
-
             var input = Substitute.For<IInput>();
             var horizontalInput = 1337;
-            input.GetAxis("Horizontal").Returns(horizontalInput);
-
             var rotate = Substitute.For<IRotateable>();
+
+            input.GetAxis("Horizontal").Returns(horizontalInput);
             script.Rotate = rotate;
             script.Input = input;
 

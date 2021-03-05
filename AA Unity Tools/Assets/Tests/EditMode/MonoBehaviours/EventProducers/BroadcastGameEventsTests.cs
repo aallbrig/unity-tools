@@ -10,11 +10,8 @@ namespace Tests.EditMode.MonoBehaviours.EventProducers
     public class BroadcastGameEventsTests
     {
         [Test]
-        public void Script_Exists()
-        {
-            var script = new GameObject().AddComponent<BroadcastGameEvents>();
-            Assert.NotNull(script);
-        }
+        public void Script_Exists() =>
+            Assert.NotNull(new GameObject().AddComponent<BroadcastGameEvents>());
 
         [Test]
         public void Script_SupportsListOfGameEvents()
@@ -37,10 +34,10 @@ namespace Tests.EditMode.MonoBehaviours.EventProducers
             // Arrange
             var script = new GameObject().AddComponent<BroadcastGameEvents>();
             var gameEvent = ScriptableObject.CreateInstance<GameEvent>();
-            script.gameEvents.Add(gameEvent);
-
             var gameEventListenerFake = Substitute.For<IGameEventListener>();
+
             gameEvent.RegisterListener(gameEventListenerFake);
+            script.gameEvents.Add(gameEvent);
 
             // Act
             script.Broadcast();
@@ -69,26 +66,28 @@ namespace Tests.EditMode.MonoBehaviours.EventProducers
             // Assert
             gameEventListenerFake.Received(3).OnEventBroadcast();
         }
-        
+
         [Test]
         public void Script_ExposesFunctionToBroadcast_MultipleTypesOfGameEvents()
         {
             // Arrange
             var script = new GameObject().AddComponent<BroadcastGameEvents>();
+
             var gameEventA = ScriptableObject.CreateInstance<GameEvent>();
             var gameEventB = ScriptableObject.CreateInstance<GameEvent>();
             var gameEventC = ScriptableObject.CreateInstance<GameEvent>();
 
+            var gameEventListenerA = Substitute.For<IGameEventListener>();
+            var gameEventListenerB = Substitute.For<IGameEventListener>();
+            var gameEventListenerC = Substitute.For<IGameEventListener>();
+
+            gameEventA.RegisterListener(gameEventListenerA);
+            gameEventB.RegisterListener(gameEventListenerB);
+            gameEventC.RegisterListener(gameEventListenerC);
+
             script.gameEvents.Add(gameEventA);
             script.gameEvents.Add(gameEventB);
             script.gameEvents.Add(gameEventC);
-
-            var gameEventListenerA = Substitute.For<IGameEventListener>();
-            gameEventA.RegisterListener(gameEventListenerA);
-            var gameEventListenerB = Substitute.For<IGameEventListener>();
-            gameEventB.RegisterListener(gameEventListenerB);
-            var gameEventListenerC = Substitute.For<IGameEventListener>();
-            gameEventC.RegisterListener(gameEventListenerC);
 
             // Act
             script.Broadcast();

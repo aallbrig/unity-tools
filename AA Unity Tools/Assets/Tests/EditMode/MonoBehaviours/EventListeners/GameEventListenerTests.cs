@@ -8,44 +8,43 @@ namespace Tests.EditMode.MonoBehaviours.EventListeners
 {
     public class GameEventListenerTests
     {
-        private GameEvent _gameEvent;
-        private GameEventListener _gameEventListener;
-        private UnityEvent _unityEvent;
-
-        [SetUp]
-        public void Setup()
-        {
-            _unityEvent = new UnityEvent();
-
-            _gameEvent = ScriptableObject.CreateInstance<GameEvent>();
-
-            _gameEventListener = new GameObject().AddComponent<GameEventListener>();
-            _gameEventListener.soEvent = _gameEvent;
-            _gameEventListener.unityEvent = _unityEvent;
-            _gameEventListener.OnEnable();
-        }
-
-        [TearDown]
-        public void TearDown()
-        {
-            _gameEventListener.OnDisable();
-            _gameEventListener = null;
-            _gameEvent = null;
-            _unityEvent = null;
-        }
-
         [Test]
         public void GameEventListenerUnityEventCanBeInvokedManually()
         {
-            _unityEvent.AddListener(() => Assert.Pass("Unity Event listener invoked"));
-            _gameEventListener.OnEventBroadcast();
+            // Arrange
+            var called = false;
+            var unityEvent = new UnityEvent();
+            var gameEventListener = new GameObject().AddComponent<GameEventListener>();
+
+            unityEvent.AddListener(() => called = true);
+            gameEventListener.unityEvent = unityEvent;
+
+            // Action
+            gameEventListener.OnEventBroadcast();
+
+            // Assert
+            Assert.IsTrue(called);
         }
 
         [Test]
         public void GameEventListenerInvokesUnityEventOnGameEventBroadcast()
         {
-            _unityEvent.AddListener(() => Assert.Pass("Unity Event listener invoked"));
-            _gameEvent.Broadcast();
+            // Arrange
+            var called = false;
+            var unityEvent = new UnityEvent();
+            var gameEvent = ScriptableObject.CreateInstance<GameEvent>();
+            var gameEventListener = new GameObject().AddComponent<GameEventListener>();
+
+            unityEvent.AddListener(() => called = true);
+            gameEventListener.unityEvent = unityEvent;
+            gameEventListener.soEvent = gameEvent;
+            gameEvent.RegisterListener(gameEventListener);
+
+            // Action
+            gameEvent.Broadcast();
+
+            // Assert
+            Assert.IsTrue(called);
         }
     }
 }

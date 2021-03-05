@@ -10,16 +10,16 @@ namespace Tests.EditMode.MonoBehaviours.EventProducers
     public class SceneEventOnEnableProducerTests : MonoBehaviour
     {
         [Test]
-        public void SceneEventIsBroadcastOnDisable()
+        public void SceneEventIsBroadcastOnEnable()
         {
             // Arrange
             var eventListenerCalled = false;
             var sceneEvent = ScriptableObject.CreateInstance<SceneEvent>();
             var sceneEventProducer = new GameObject().AddComponent<SceneEventOnEnableProducer>();
-            sceneEventProducer.sceneEvents.Add(sceneEvent);
-
             var sceneEventListener = new GameObject().AddComponent<SceneEventListener>();
             var unityEvent = new UnityEvent();
+
+            sceneEventProducer.sceneEvents.Add(sceneEvent);
             sceneEventListener.soEvent = sceneEvent;
             sceneEventListener.unityEvent = unityEvent;
             unityEvent.AddListener(() => eventListenerCalled = true);
