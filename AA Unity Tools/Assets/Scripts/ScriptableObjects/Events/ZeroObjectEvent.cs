@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
-using MonoBehaviours.EventListeners;
+using Interfaces;
 using UnityEngine;
 
 namespace ScriptableObjects.Events
 {
-    [CreateAssetMenu(fileName = "new game object event", menuName = "AATools/Events/SceneEvent")]
-    public class SceneEvent : ScriptableObject
+    public class ZeroObjectEvent : ScriptableObject
     {
-        private readonly List<SceneEventListener> _listeners = new List<SceneEventListener>();
+        private readonly List<IZeroObjectEventListener> _listeners = new List<IZeroObjectEventListener>();
 
         public void Broadcast()
         {
@@ -15,13 +14,13 @@ namespace ScriptableObjects.Events
                 _listeners[i].OnEventBroadcast();
         }
 
-        public void RegisterListener(SceneEventListener listener)
+        public void RegisterListener(IZeroObjectEventListener listener)
         {
             if (!_listeners.Contains(listener))
                 _listeners.Add(listener);
         }
 
-        public void UnregisterListener(SceneEventListener listener)
+        public void UnregisterListener(IZeroObjectEventListener listener)
         {
             if (_listeners.Contains(listener))
                 _listeners.Remove(listener);

@@ -1,6 +1,6 @@
 ﻿namespace Interfaces
 {
-    public interface IGameObjectEventListener<T>
+    public interface IOneObjectEventListener<T>
     {
         void OnEventBroadcast(T eventPayload);
     }

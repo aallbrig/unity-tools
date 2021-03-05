@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Tests.EditMode.ScriptableObjects.Events
 {
-    public class GameObjectEventTests
+    public class GameEventTests
     {
         [Test]
         public void ScriptableObject_Exists() =>
-            Assert.NotNull(ScriptableObject.CreateInstance<GameObjectEvent>());
+            Assert.NotNull(ScriptableObject.CreateInstance<GameEvent>());
     }
 }

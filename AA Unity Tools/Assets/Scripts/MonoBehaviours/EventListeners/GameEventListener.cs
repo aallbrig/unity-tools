@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace MonoBehaviours.EventListeners
 {
-    public class GameEventListener : MonoBehaviour, IGameEventListener
+    public class GameEventListener : MonoBehaviour, IZeroObjectEventListener
     {
         public GameEvent soEvent;
         public UnityEvent unityEvent;

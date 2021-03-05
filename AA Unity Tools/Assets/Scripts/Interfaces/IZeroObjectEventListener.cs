@@ -1,6 +1,6 @@
 ﻿namespace Interfaces
 {
-    public interface IGameEventListener
+    public interface IZeroObjectEventListener
     {
         void OnEventBroadcast();
     }

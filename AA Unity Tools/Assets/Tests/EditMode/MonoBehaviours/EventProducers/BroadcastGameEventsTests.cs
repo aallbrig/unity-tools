@@ -34,7 +34,7 @@ namespace Tests.EditMode.MonoBehaviours.EventProducers
             // Arrange
             var script = new GameObject().AddComponent<BroadcastGameEvents>();
             var gameEvent = ScriptableObject.CreateInstance<GameEvent>();
-            var gameEventListenerFake = Substitute.For<IGameEventListener>();
+            var gameEventListenerFake = Substitute.For<IZeroObjectEventListener>();
 
             gameEvent.RegisterListener(gameEventListenerFake);
             script.gameEvents.Add(gameEvent);
@@ -57,7 +57,7 @@ namespace Tests.EditMode.MonoBehaviours.EventProducers
             script.gameEvents.Add(gameEvent);
             script.gameEvents.Add(gameEvent);
 
-            var gameEventListenerFake = Substitute.For<IGameEventListener>();
+            var gameEventListenerFake = Substitute.For<IZeroObjectEventListener>();
             gameEvent.RegisterListener(gameEventListenerFake);
 
             // Act
@@ -77,9 +77,9 @@ namespace Tests.EditMode.MonoBehaviours.EventProducers
             var gameEventB = ScriptableObject.CreateInstance<GameEvent>();
             var gameEventC = ScriptableObject.CreateInstance<GameEvent>();
 
-            var gameEventListenerA = Substitute.For<IGameEventListener>();
-            var gameEventListenerB = Substitute.For<IGameEventListener>();
-            var gameEventListenerC = Substitute.For<IGameEventListener>();
+            var gameEventListenerA = Substitute.For<IZeroObjectEventListener>();
+            var gameEventListenerB = Substitute.For<IZeroObjectEventListener>();
+            var gameEventListenerC = Substitute.For<IZeroObjectEventListener>();
 
             gameEventA.RegisterListener(gameEventListenerA);
             gameEventB.RegisterListener(gameEventListenerB);
