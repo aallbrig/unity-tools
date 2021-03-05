@@ -1,5 +1,4 @@
-﻿using NSubstitute;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using ScriptableObjects.RuntimeSets;
 using UnityEngine;
 
@@ -10,11 +9,7 @@ namespace Tests.EditMode.ScriptableObjects.RuntimeSets
 
     public class RuntimeSet
     {
-        [Test]
-        public void RuntimeSet_CanBe_Created()
-        {
-            Assert.NotNull(ScriptableObject.CreateInstance<RuntimeSetAlias>());
-        }
+        [Test] public void RuntimeSet_CanBe_Created() => Assert.NotNull(ScriptableObject.CreateInstance<RuntimeSetAlias>());
 
         [Test]
         public void RuntimeSet_CanBe_Reset()

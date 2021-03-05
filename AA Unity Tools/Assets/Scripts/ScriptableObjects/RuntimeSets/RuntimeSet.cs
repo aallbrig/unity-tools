@@ -8,11 +8,11 @@ namespace ScriptableObjects.RuntimeSets
         public List<T> list = new List<T>();
 
         private void Awake() => Reset();
+
+        public void Reset() => list.Clear();
         private void OnEnable() => Reset();
         private void OnDisable() => Reset();
         private void OnDestroy() => Reset();
-
-        public void Reset() => list.Clear();
 
         public void Add(T listItem)
         {

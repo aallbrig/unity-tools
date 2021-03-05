@@ -8,8 +8,8 @@ namespace MonoBehaviours.EventProducers
     public class BroadcastGameEvents : MonoBehaviour, IEventProducer
     {
         public List<GameEvent> gameEvents = new List<GameEvent>();
+        public void ProduceEvents() => gameEvents.ForEach(gameEvent => gameEvent.Broadcast());
 
         public void Broadcast() => ProduceEvents();
-        public void ProduceEvents() => gameEvents.ForEach(gameEvent => gameEvent.Broadcast());
     }
 }

@@ -8,14 +8,9 @@ namespace Tests.EditMode.ScriptableObjects.Events
 {
     public class OneObjectEventTests
     {
-        // HACK: Alias required because ScriptableObject.CreateInstance<OneObjectEvent<Object>>() does not work
-        public class OneObjectEventAlias : OneObjectEvent<Object> {}
 
         [Test]
-        public void ScriptableObject_Exists()
-        {
-            Assert.NotNull(ScriptableObject.CreateInstance<OneObjectEventAlias>());
-        }
+        public void ScriptableObject_Exists() => Assert.NotNull(ScriptableObject.CreateInstance<OneObjectEventAlias>());
 
         [Test]
         public void OneObjectEvent_BroadcastReceivedByListener_Single()
@@ -48,5 +43,8 @@ namespace Tests.EditMode.ScriptableObjects.Events
             eventListenerB.Received().OnEventBroadcast(payload);
             eventListenerC.Received().OnEventBroadcast(payload);
         }
+
+        // HACK: Alias required because ScriptableObject.CreateInstance<OneObjectEvent<Object>>() does not work
+        public class OneObjectEventAlias : OneObjectEvent<Object> {}
     }
 }
