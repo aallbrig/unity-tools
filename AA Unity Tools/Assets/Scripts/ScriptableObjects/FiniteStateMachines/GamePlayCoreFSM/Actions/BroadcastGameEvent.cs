@@ -1,4 +1,4 @@
-﻿using MonoBehaviours.StateMachines;
+﻿using Interfaces;
 using ScriptableObjects.Events;
 using UnityEngine;
 
@@ -9,6 +9,6 @@ namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.Actions
     public class BroadcastGameEvent : Action
     {
         public GameEvent gameEvent;
-        public override void Act(GamePlayCoreContext context) => gameEvent.Broadcast();
+        public override void Act(IFiniteStateMachineContext<State> context) => gameEvent.Broadcast();
     }
 }

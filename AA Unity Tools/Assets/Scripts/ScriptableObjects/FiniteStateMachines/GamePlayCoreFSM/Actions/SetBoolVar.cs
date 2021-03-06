@@ -1,4 +1,4 @@
-﻿using MonoBehaviours.StateMachines;
+﻿using Interfaces;
 using ScriptableObjects.Refs;
 using ScriptableObjects.Vars;
 using UnityEngine;
@@ -11,6 +11,6 @@ namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.Actions
         public BoolVar targetBoolVar;
         public BoolRef boolRef;
 
-        public override void Act(GamePlayCoreContext context) => targetBoolVar.value = boolRef.Value;
+        public override void Act(IFiniteStateMachineContext<State> context) => targetBoolVar.value = boolRef.Value;
     }
 }

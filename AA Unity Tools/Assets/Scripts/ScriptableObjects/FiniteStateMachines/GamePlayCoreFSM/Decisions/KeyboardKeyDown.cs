@@ -1,4 +1,4 @@
-﻿using MonoBehaviours.StateMachines;
+﻿using Interfaces;
 using UnityEngine;
 
 namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.Decisions
@@ -9,6 +9,6 @@ namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.Decisions
     {
         public KeyCode keyCode;
 
-        public override bool Decide(GamePlayCoreContext context) => Input.GetKeyDown(keyCode);
+        public override bool Decide(IFiniteStateMachineContext<State> context) => Input.GetKeyDown(keyCode);
     }
 }
