@@ -24,7 +24,7 @@ namespace Tests.EditMode.ScriptableObjects.Refs
             refInstance.var = dummyGameObject;
 
             var returnedValue = refInstance.Value;
-            
+
             Assert.AreEqual(dummyGameObject, returnedValue);
         }
         [Test]
@@ -38,7 +38,7 @@ namespace Tests.EditMode.ScriptableObjects.Refs
             refInstance.constantValue = varInstance;
 
             var returnedValue = refInstance.Value;
-            
+
             Assert.AreEqual(dummyGameObject, returnedValue);
         }
     }
