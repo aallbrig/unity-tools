@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "com.andrewallbright.allbrightools": {
-      "version": "file:com.andrewallbright.allbrightools",
+    "com.andrewallbright.allbrighttools": {
+      "version": "file:com.andrewallbright.allbrighttools",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}
