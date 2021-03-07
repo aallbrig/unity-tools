@@ -1,0 +1,14 @@
+{
+  "name": "com.andrewallbright.allbrightools",
+  "version": "0.0.15",
+  "displayName": "Allbright Unity Tools",
+  "description": "Tools built by Andrew Allbright for quicker development tooling",
+  "unity": "2019.4",
+  "unityRelease": "19f1",
+  "keywords": ["tools", "allbright", "andrew"],
+  "author": {
+    "name": "Andrew Allbright",
+    "email": "support@andrewallbright.com",
+    "url": "https://andrewallbright.com"
+  }
+}

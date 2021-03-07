@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.andrewallbright.allbrightools": {
+      "version": "file:com.andrewallbright.allbrightools",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.cinemachine": {
       "version": "2.6.3",
       "depth": 0,
