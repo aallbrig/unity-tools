@@ -6,16 +6,17 @@ using UnityEngine.Events;
 
 namespace Tests.EditMode.MonoBehaviours.EventListeners
 {
-    public class GameEventListenerTests
+    public class ZeroObjectEventListenerTests
     {
+
         [Test]
-        public void GameEventListenerUnityEventCanBeInvokedManually()
+        public void ZeroObjectEventListenerUnityEventCanBeInvokedManually()
         {
             // Arrange
             var called = false;
             var unityEvent = new UnityEvent();
             unityEvent.AddListener(() => called = true);
-            var gameEventListener = new GameObject().AddComponent<GameEventListener>();
+            var gameEventListener = new GameObject().AddComponent<ZeroObjectEventListenerAlias>();
             gameEventListener.unityEvent = unityEvent;
 
             // Action
@@ -26,14 +27,14 @@ namespace Tests.EditMode.MonoBehaviours.EventListeners
         }
 
         [Test]
-        public void GameEventListenerInvokesUnityEventOnGameEventBroadcast()
+        public void ZeroObjectEventListenerInvokesUnityEventOnZeroObjectEventBroadcast()
         {
             // Arrange
             var called = false;
             var unityEvent = new UnityEvent();
             unityEvent.AddListener(() => called = true);
-            var gameEvent = ScriptableObject.CreateInstance<GameEvent>();
-            var gameEventListener = new GameObject().AddComponent<GameEventListener>();
+            var gameEvent = ScriptableObject.CreateInstance<ZeroObjectEvent>();
+            var gameEventListener = new GameObject().AddComponent<ZeroObjectEventListenerAlias>();
             gameEventListener.unityEvent = unityEvent;
             gameEventListener.soEvent = gameEvent;
             gameEvent.RegisterListener(gameEventListener);
@@ -44,5 +45,8 @@ namespace Tests.EditMode.MonoBehaviours.EventListeners
             // Assert
             Assert.IsTrue(called);
         }
+
+        // HACK: new GameObject().AddComponent<ZeroObjectEventListener<ZeroObjectEvent>>() does not work
+        public class ZeroObjectEventListenerAlias : ZeroObjectEventListener<ZeroObjectEvent> {}
     }
 }

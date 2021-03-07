@@ -8,9 +8,6 @@ namespace Tests.EditMode.MonoBehaviours.Controllers
 {
     public class ThirdPersonControllerTests
     {
-        [Test]
-        public void Script_Exists() =>
-            Assert.NotNull(new GameObject().AddComponent<ThirdPersonController>());
 
         [Test]
         public void ThirdPersonController_MoveInterface_ReceivesVerticalInput()

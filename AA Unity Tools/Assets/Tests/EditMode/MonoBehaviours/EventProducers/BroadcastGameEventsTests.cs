@@ -10,10 +10,6 @@ namespace Tests.EditMode.MonoBehaviours.EventProducers
     public class BroadcastGameEventsTests
     {
         [Test]
-        public void Script_Exists() =>
-            Assert.NotNull(new GameObject().AddComponent<BroadcastGameEvents>());
-
-        [Test]
         public void Script_SupportsListOfGameEvents()
         {
             // Arrange

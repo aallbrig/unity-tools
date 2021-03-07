@@ -7,8 +7,6 @@ namespace Tests.EditMode.ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM
 {
     public class TransitionTests
     {
-        [Test] public void Transition_Exists() => Assert.NotNull(new Transition());
-
         [Test]
         public void Transition_Contains_ADecision()
         {

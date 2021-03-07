@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Tests.EditMode.MonoBehaviours.EventListeners
 {
-    public class GameObjectEventListenerTests
+    public class OneObjectEventListenerTests
     {
 
         [Test]
@@ -13,8 +13,8 @@ namespace Tests.EditMode.MonoBehaviours.EventListeners
         {
             // Arrange
             var eventListenerCalled = false;
-            var gameObjectEvent = ScriptableObject.CreateInstance<GameObjectEvent>();
-            var gameObjectEventListener = new GameObject().AddComponent<GameObjectEventListener>();
+            var gameObjectEvent = ScriptableObject.CreateInstance<OneObjectEventAlias>();
+            var gameObjectEventListener = new GameObject().AddComponent<OneObjectEventListenerAlias>();
             var unityEvent = new OneObjectEventListener<GameObject>.OneObjectEventUnityEvent();
 
             unityEvent.AddListener(gameObject => eventListenerCalled = true);
@@ -35,8 +35,8 @@ namespace Tests.EditMode.MonoBehaviours.EventListeners
             // Arrange
             GameObject passedInArgument = null;
             var dummyGameObject = new GameObject();
-            var gameObjectEvent = ScriptableObject.CreateInstance<GameObjectEvent>();
-            var gameObjectEventListener = new GameObject().AddComponent<GameObjectEventListener>();
+            var gameObjectEvent = ScriptableObject.CreateInstance<OneObjectEventAlias>();
+            var gameObjectEventListener = new GameObject().AddComponent<OneObjectEventListenerAlias>();
             var unityEvent = new OneObjectEventListener<GameObject>.OneObjectEventUnityEvent();
 
             unityEvent.AddListener(gameObject => passedInArgument = gameObject);
@@ -48,16 +48,16 @@ namespace Tests.EditMode.MonoBehaviours.EventListeners
             gameObjectEventListener.OnEventBroadcast(dummyGameObject);
 
             // Assert
-            Assert.AreSame(dummyGameObject, passedInArgument, "GameObject is passed in as a parameter");
+            Assert.AreSame(dummyGameObject, passedInArgument);
         }
 
         [Test]
-        public void OnGameObjectEventBroadcast_GameEventListenerInvokesUnityEventOnGameEventBroadcast()
+        public void OnOneObjectEventBroadcast_GameEventListenerInvokesUnityEventOnGameEventBroadcast()
         {
             // Arrange
             var eventListenerCalled = false;
-            var gameObjectEvent = ScriptableObject.CreateInstance<GameObjectEvent>();
-            var gameObjectEventListener = new GameObject().AddComponent<GameObjectEventListener>();
+            var gameObjectEvent = ScriptableObject.CreateInstance<OneObjectEventAlias>();
+            var gameObjectEventListener = new GameObject().AddComponent<OneObjectEventListenerAlias>();
             var unityEvent = new OneObjectEventListener<GameObject>.OneObjectEventUnityEvent();
 
             unityEvent.AddListener(gameObject => eventListenerCalled = true);
@@ -73,13 +73,13 @@ namespace Tests.EditMode.MonoBehaviours.EventListeners
         }
 
         [Test]
-        public void OnGameObjectEventBroadcast_CalledWithExpectedArgument()
+        public void OnOneObjectEventBroadcast_CalledWithExpectedArgument()
         {
             // Arrange
             GameObject passedInArgument = null;
             var dummyGameObject = new GameObject();
-            var gameObjectEvent = ScriptableObject.CreateInstance<GameObjectEvent>();
-            var gameObjectEventListener = new GameObject().AddComponent<GameObjectEventListener>();
+            var gameObjectEvent = ScriptableObject.CreateInstance<OneObjectEventAlias>();
+            var gameObjectEventListener = new GameObject().AddComponent<OneObjectEventListenerAlias>();
             var unityEvent = new OneObjectEventListener<GameObject>.OneObjectEventUnityEvent();
 
             unityEvent.AddListener(gameObject => passedInArgument = gameObject);
@@ -91,7 +91,13 @@ namespace Tests.EditMode.MonoBehaviours.EventListeners
             gameObjectEvent.Broadcast(dummyGameObject);
 
             // Assert
-            Assert.AreSame(dummyGameObject, passedInArgument, "GameObject is passed in as a parameter");
+            Assert.AreSame(dummyGameObject, passedInArgument);
         }
+
+        // HACK: Alias because ScriptableObject.CreateInstance<OneObjectEvent<GameObject>>() does not work
+        public class OneObjectEventAlias : OneObjectEvent<GameObject> {}
+
+        // HACK: Alias because new GameObject.AddComponent<OneObjectEventListener<GameObject>>() does not work
+        public class OneObjectEventListenerAlias : OneObjectEventListener<GameObject> {}
     }
 }

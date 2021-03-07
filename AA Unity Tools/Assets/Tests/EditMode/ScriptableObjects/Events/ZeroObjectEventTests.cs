@@ -9,11 +9,6 @@ namespace Tests.EditMode.ScriptableObjects.Events
     public class ZeroObjectEventTests
     {
         [Test]
-        public void ScriptableObject_Exists() =>
-            Assert.NotNull(ScriptableObject.CreateInstance<ZeroObjectEvent>());
-
-
-        [Test]
         public void OneObjectEvent_Broadcast_ReceivedByListener()
         {
             var evt = ScriptableObject.CreateInstance<ZeroObjectEvent>();

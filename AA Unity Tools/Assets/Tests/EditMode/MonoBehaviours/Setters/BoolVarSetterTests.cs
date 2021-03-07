@@ -7,8 +7,6 @@ namespace Tests.EditMode.MonoBehaviours.Setters
 {
     public class BoolVarSetterTests
     {
-        [Test] public void Script_Exists() => Assert.NotNull(new GameObject().AddComponent<BoolVarSetter>());
-
         [Test]
         public void Var_CanBe_Set()
         {

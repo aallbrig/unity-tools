@@ -9,10 +9,6 @@ namespace Tests.EditMode.MonoBehaviours.Controllers
     public class WASDInputControllerTests
     {
         [Test]
-        public void Script_Exists() =>
-            Assert.NotNull(new GameObject().AddComponent<WASDInputController>());
-
-        [Test]
         public void WASDInputController_MoveFunction_ReceivesVerticalAndHorizontalInput()
         {
             // Arrange

@@ -11,7 +11,6 @@ namespace Tests.EditMode.ScriptableObjects.Vars
 
     public class VarTests
     {
-        [Test] public void ScriptableObject_Exists() => Assert.NotNull(ScriptableObject.CreateInstance<VarAlias>());
         [Test] public void Var_Starts_WithoutAValue() => Assert.Null(ScriptableObject.CreateInstance<VarAlias>().value);
         [Test]
         public void Var_Can_HaveValueUpdate()

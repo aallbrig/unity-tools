@@ -8,10 +8,6 @@ namespace Tests.EditMode.ScriptableObjects.Events
 {
     public class OneObjectEventTests
     {
-
-        [Test]
-        public void ScriptableObject_Exists() => Assert.NotNull(ScriptableObject.CreateInstance<OneObjectEventAlias>());
-
         [Test]
         public void OneObjectEvent_BroadcastReceivedByListener_Single()
         {

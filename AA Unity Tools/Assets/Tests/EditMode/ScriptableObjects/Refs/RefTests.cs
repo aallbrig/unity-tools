@@ -13,7 +13,6 @@ namespace Tests.EditMode.ScriptableObjects.Refs
 
     public class RefTests
     {
-        [Test] public void ScriptableObject_Exists() => Assert.NotNull(new RefAlias());
         [Test] public void Ref_StartsOut_ReturningDynamicValue() => Assert.False(new RefAlias().useConstant);
         [Test]
         public void Ref_CanReturn_DynamicValue()
