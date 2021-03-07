@@ -1,3 +1,15 @@
-﻿{
-	"name": "Unity.com.andrewallbright.allbrighttools.Editor"
+{
+    "name": "Unity.com.andrewallbright.allbrighttools.Editor",
+    "references": [
+        "GUID:2a16e1c265cb11a47a92b9e9b21a58da"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

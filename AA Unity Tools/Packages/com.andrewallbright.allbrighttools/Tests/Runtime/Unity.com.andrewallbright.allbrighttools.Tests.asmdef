@@ -1,3 +1,18 @@
-﻿{
-	"name": "Unity.com.andrewallbright.allbrighttools.Tests"
+{
+    "name": "Unity.com.andrewallbright.allbrighttools.Tests",
+    "references": [
+        "GUID:c7d25c856c858d746a08020be91840b7"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "NSubstitute.dll",
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

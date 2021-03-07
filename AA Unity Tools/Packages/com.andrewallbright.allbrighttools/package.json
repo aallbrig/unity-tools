@@ -15,5 +15,7 @@
     "email": "support@andrewallbright.com",
     "url": "https://andrewallbright.com"
   },
-  "type": "library"
+  "type": "template",
+  "hideInEditor": false,
+  "dependencies": {}
 }
