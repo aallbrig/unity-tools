@@ -1260,6 +1260,56 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 626289517715295452, guid: dcf591bfa3633c446a754965b9217f67,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.State, Unity.com.andrewallbright.allbrighttools
+      objectReference: {fileID: 0}
+    - target: {fileID: 626289518008206141, guid: dcf591bfa3633c446a754965b9217f67,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.State, Unity.com.andrewallbright.allbrighttools
+      objectReference: {fileID: 0}
+    - target: {fileID: 626289518435259469, guid: dcf591bfa3633c446a754965b9217f67,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.State, Unity.com.andrewallbright.allbrighttools
+      objectReference: {fileID: 0}
+    - target: {fileID: 626289518553490628, guid: dcf591bfa3633c446a754965b9217f67,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.State, Unity.com.andrewallbright.allbrighttools
+      objectReference: {fileID: 0}
+    - target: {fileID: 626289518723300949, guid: dcf591bfa3633c446a754965b9217f67,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.State, Unity.com.andrewallbright.allbrighttools
+      objectReference: {fileID: 0}
+    - target: {fileID: 626289519073184343, guid: dcf591bfa3633c446a754965b9217f67,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.State, Unity.com.andrewallbright.allbrighttools
+      objectReference: {fileID: 0}
+    - target: {fileID: 626289519280679823, guid: dcf591bfa3633c446a754965b9217f67,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.State, Unity.com.andrewallbright.allbrighttools
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898796040349516957, guid: dcf591bfa3633c446a754965b9217f67,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1276173298}
+    - target: {fileID: 6898796040349516957, guid: dcf591bfa3633c446a754965b9217f67,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TransitionToState
+      objectReference: {fileID: 0}
+    - target: {fileID: 6898796040349516957, guid: dcf591bfa3633c446a754965b9217f67,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.State, Unity.com.andrewallbright.allbrighttools
+      objectReference: {fileID: 0}
     - target: {fileID: 6898796042105935192, guid: dcf591bfa3633c446a754965b9217f67,
         type: 3}
       propertyPath: m_RootOrder
@@ -1322,6 +1372,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcf591bfa3633c446a754965b9217f67, type: 3}
+--- !u!114 &1276173298 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6898796042105935194, guid: dcf591bfa3633c446a754965b9217f67,
+    type: 3}
+  m_PrefabInstance: {fileID: 1276173297}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d44ba762e944dfadbd55214c752aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1406913917
 GameObject:
   m_ObjectHideFlags: 0
