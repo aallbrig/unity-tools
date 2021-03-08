@@ -3,7 +3,8 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Unity.com.andrewallbright.allbrighttools"
+        "Unity.com.andrewallbright.allbrighttools",
+        "Unity.com.andrewallbright.allbrighttools.Plugins"
     ],
     "includePlatforms": [
         "Editor"
