@@ -1,13 +1,12 @@
 {
-    "name": "Unity.com.andrewallbright.allbrightools.EditModeTests",
+    "name": "Unity.com.andrewallbright.allbrightools.EditModeTesting",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "Unity.com.andrewallbright.allbrighttools"
     ],
     "includePlatforms": [
-        "Editor",
-        "iOS"
+        "Editor"
     ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
