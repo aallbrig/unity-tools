@@ -59,5 +59,9 @@ https://github.com/aallbrig/unity-tools.git?path=AA Unity Tools/Packages/com.and
 
 
 ---
+Ideas...
 UI manager? UI state machine?
+
+---
+Big thanks to [this blog by Naga Chiang](https://nagachiang.github.io/tutorial-working-with-custom-package-in-unity-2019-2/#) for helping to keep custom packages more simple than the official unity documentation!
 
