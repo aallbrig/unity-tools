@@ -27,7 +27,7 @@
     {
       "displayName": "Demo",
       "description": "Basic demo project with core game loop started",
-      "path": "Samples/Demo"
+      "path": "Samples~/Demo"
     }
   ]
 }
