@@ -10,6 +10,8 @@ namespace MonoBehaviours.Movement
 
         private void Start() => _transform = GetComponent<Transform>();
 
+        public float Velocity => speed;
+
         public void Move(Vector3 direction) => _transform.position += direction * (speed * Time.deltaTime);
     }
 }

@@ -12,6 +12,8 @@ namespace MonoBehaviours.Movement
 
         private void Start() => _rigidbody = GetComponent<Rigidbody>();
 
+        public float Velocity => speed;
+
         public void Move(Vector3 direction)
         {
             var directionWithSpeed = direction * (speed * Time.deltaTime);

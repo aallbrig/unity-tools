@@ -17,6 +17,8 @@ namespace MonoBehaviours.Movement
             _agent = GetComponent<NavMeshAgent>();
         }
 
+        public float Velocity => Vector3.Magnitude(_agent.velocity);
+
         public void Move(Vector3 direction)
         {
             var destination = _transform.position + direction * (speed * Time.deltaTime);
