@@ -21,5 +21,26 @@ namespace Tests.Runtime.EditMode.ScriptableObjects.Vars
 
             Assert.NotNull(varInstance.value);
         }
+
+        [Test]
+        public void Var_Can_BeSetUsingFunction()
+        {
+            var varInstance = ScriptableObject.CreateInstance<VarAlias>();
+
+            varInstance.SetVar(new GameObject());
+
+            Assert.NotNull(varInstance.value);
+        }
+
+        [Test]
+        public void Var_Can_BeResetUsingFunction()
+        {
+            var varInstance = ScriptableObject.CreateInstance<VarAlias>();
+            varInstance.value = new GameObject();
+
+            varInstance.ResetVar();
+
+            Assert.Null(varInstance.value);
+        }
     }
 }
