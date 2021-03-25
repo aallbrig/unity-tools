@@ -15,6 +15,7 @@ namespace MonoBehaviours.Movement
         {
             _transform = transform;
             _agent = GetComponent<NavMeshAgent>();
+            _agent.speed = speed;
         }
 
         public float Velocity => Vector3.Magnitude(_agent.velocity);

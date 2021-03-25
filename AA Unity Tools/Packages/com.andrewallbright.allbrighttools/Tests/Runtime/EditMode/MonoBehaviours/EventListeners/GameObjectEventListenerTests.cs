@@ -15,7 +15,7 @@ namespace Tests.Runtime.EditMode.MonoBehaviours.EventListeners
             var eventListenerCalled = false;
             var gameObjectEvent = ScriptableObject.CreateInstance<GameObjectEvent>();
             var gameObjectEventListener = new GameObject().AddComponent<GameObjectEventListener>();
-            var unityEvent = new OneObjectEventListener<GameObject>.OneObjectEventUnityEvent();
+            var unityEvent = new GameObjectEventListener.GameObjectEventUnityEvent();
 
             unityEvent.AddListener(gameObject => eventListenerCalled = true);
             gameObjectEventListener.soEvent = gameObjectEvent;
@@ -37,7 +37,7 @@ namespace Tests.Runtime.EditMode.MonoBehaviours.EventListeners
             var dummyGameObject = new GameObject();
             var gameObjectEvent = ScriptableObject.CreateInstance<GameObjectEvent>();
             var gameObjectEventListener = new GameObject().AddComponent<GameObjectEventListener>();
-            var unityEvent = new OneObjectEventListener<GameObject>.OneObjectEventUnityEvent();
+            var unityEvent = new GameObjectEventListener.GameObjectEventUnityEvent();
 
             unityEvent.AddListener(gameObject => passedInArgument = gameObject);
             gameObjectEventListener.soEvent = gameObjectEvent;
@@ -58,7 +58,7 @@ namespace Tests.Runtime.EditMode.MonoBehaviours.EventListeners
             var eventListenerCalled = false;
             var gameObjectEvent = ScriptableObject.CreateInstance<GameObjectEvent>();
             var gameObjectEventListener = new GameObject().AddComponent<GameObjectEventListener>();
-            var unityEvent = new OneObjectEventListener<GameObject>.OneObjectEventUnityEvent();
+            var unityEvent = new GameObjectEventListener.GameObjectEventUnityEvent();
 
             unityEvent.AddListener(gameObject => eventListenerCalled = true);
             gameObjectEventListener.soEvent = gameObjectEvent;
@@ -80,7 +80,7 @@ namespace Tests.Runtime.EditMode.MonoBehaviours.EventListeners
             var dummyGameObject = new GameObject();
             var gameObjectEvent = ScriptableObject.CreateInstance<GameObjectEvent>();
             var gameObjectEventListener = new GameObject().AddComponent<GameObjectEventListener>();
-            var unityEvent = new OneObjectEventListener<GameObject>.OneObjectEventUnityEvent();
+            var unityEvent = new GameObjectEventListener.GameObjectEventUnityEvent();
 
             unityEvent.AddListener(gameObject => passedInArgument = gameObject);
             gameObjectEventListener.soEvent = gameObjectEvent;
