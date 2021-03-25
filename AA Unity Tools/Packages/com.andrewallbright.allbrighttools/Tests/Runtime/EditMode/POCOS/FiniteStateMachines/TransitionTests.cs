@@ -1,9 +1,10 @@
 ﻿using Interfaces;
 using NSubstitute;
 using NUnit.Framework;
+using Pocos.FiniteStateMachines;
 using ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM;
 
-namespace Tests.Runtime.EditMode.ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM
+namespace Tests.Runtime.EditMode.POCOS.FiniteStateMachines
 {
     public class TransitionTests
     {
@@ -11,7 +12,7 @@ namespace Tests.Runtime.EditMode.ScriptableObjects.FiniteStateMachines.GamePlayC
         public void Transition_Contains_ADecision()
         {
             var decision = Substitute.For<Decision>();
-            var transition = new Transition();
+            var transition = new Transition<State, Decision>();
 
             transition.decision = decision;
 
@@ -22,7 +23,7 @@ namespace Tests.Runtime.EditMode.ScriptableObjects.FiniteStateMachines.GamePlayC
         public void Transition_Contains_ATrueState()
         {
             var state = Substitute.For<State>();
-            var transition = new Transition();
+            var transition = new Transition<State, Decision>();
 
             transition.trueState = state;
 
@@ -36,7 +37,7 @@ namespace Tests.Runtime.EditMode.ScriptableObjects.FiniteStateMachines.GamePlayC
             var state = Substitute.For<State>();
             var context = Substitute.For<IFiniteStateMachineContext<State>>();
             var decision = Substitute.For<Decision>();
-            var transition = new Transition();
+            var transition = new Transition<State, Decision>();
             decision.Decide(context).Returns(true);
 
             transition.trueState = state;

@@ -1,6 +1,7 @@
 ﻿using Interfaces;
 using NSubstitute;
 using NUnit.Framework;
+using Pocos.FiniteStateMachines;
 using ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM;
 using UnityEngine;
 
@@ -8,6 +9,11 @@ namespace Tests.Runtime.EditMode.ScriptableObjects.FiniteStateMachines.GamePlayC
 {
     public class StateTests
     {
+        public class DecisionAliasTrue : Decision
+        {
+            public override bool Decide(IFiniteStateMachineContext<State> context) => true;
+        }
+
         [Test] public void ScriptableObject_Asset_Creatable() => ScriptableObject.CreateInstance<State>();
 
         [Test]
@@ -42,7 +48,7 @@ namespace Tests.Runtime.EditMode.ScriptableObjects.FiniteStateMachines.GamePlayC
             var state = ScriptableObject.CreateInstance<State>();
             var context = Substitute.For<IFiniteStateMachineContext<State>>();
             var decision = Substitute.For<Decision>();
-            var transition = new Transition {decision = decision};
+            var transition = new Transition<State, Decision> {decision = decision};
             state.transitions.Add(transition);
 
             state.UpdateState(context);
@@ -55,10 +61,13 @@ namespace Tests.Runtime.EditMode.ScriptableObjects.FiniteStateMachines.GamePlayC
         {
             var state = ScriptableObject.CreateInstance<State>();
             var context = Substitute.For<IFiniteStateMachineContext<State>>();
-            var decision = Substitute.For<Decision>();
-            decision.Decide(context).Returns(true);
             var trueState = ScriptableObject.CreateInstance<State>();
-            var transition = new Transition {decision = decision, trueState = trueState};
+            var transition = new Transition<State, Decision>
+            {
+                decision = ScriptableObject.CreateInstance<DecisionAliasTrue>(),
+                trueState = trueState
+            };
+
             state.transitions.Add(transition);
 
             state.UpdateState(context);

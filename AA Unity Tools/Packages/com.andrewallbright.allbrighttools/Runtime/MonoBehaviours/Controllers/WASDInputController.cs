@@ -20,6 +20,22 @@ namespace MonoBehaviours.Controllers
 
         public IMoveable Move { get; set; }
 
+        private void Start()
+        {
+            CacheInputComponent();
+            CacheMoveComponent();
+            CacheForwardRelativeToTransform();
+        }
+
+        private void Update() => HandleMovementInput();
+
+        private void OnEnable()
+        {
+            CacheInputComponent();
+            CacheMoveComponent();
+            CacheForwardRelativeToTransform();
+        }
+
         public void HandleMovementInput()
         {
             if (Move == null)
@@ -31,25 +47,6 @@ namespace MonoBehaviours.Controllers
             var direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             var rotatedDirection = new Quaternion(0, ForwardTransform.rotation.eulerAngles.y, 0, 0) * direction;
             Move.Move(direction);
-        }
-
-        private void Start()
-        {
-            CacheInputComponent();
-            CacheMoveComponent();
-            CacheForwardRelativeToTransform();
-        }
-
-        private void Update()
-        {
-            HandleMovementInput();
-        }
-
-        private void OnEnable()
-        {
-            CacheInputComponent();
-            CacheMoveComponent();
-            CacheForwardRelativeToTransform();
         }
 
         private void CacheInputComponent() => Input = (inputSource != null ? inputSource : gameObject).GetComponent<IInput>();

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Interfaces;
+using Pocos.FiniteStateMachines;
 using UnityEngine;
 
 namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM
@@ -9,8 +10,8 @@ namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM
     {
         [Header("On Start")] public List<Action> startActions = new List<Action>();
         [Header("Every Update")] public List<Action> updateActions = new List<Action>();
-        public List<Transition> transitions = new List<Transition>();
         [Header("On Leave")] public List<Action> leaveActions = new List<Action>();
+        public readonly List<Transition<State, Decision>> transitions = new List<Transition<State, Decision>>();
 
         public void StartState(IFiniteStateMachineContext<State> context) =>
             startActions.ForEach(action => action.Act(context));

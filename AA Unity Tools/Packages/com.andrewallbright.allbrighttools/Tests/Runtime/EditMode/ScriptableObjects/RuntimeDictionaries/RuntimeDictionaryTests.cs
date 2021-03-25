@@ -14,9 +14,9 @@ namespace Tests.Runtime.EditMode.ScriptableObjects.RuntimeDictionaries
         {
             var instance = ScriptableObject.CreateInstance<RuntimeDictionaryAlias>();
             instance.dictionary[new GameObject()] = new GameObject();
-            
+
             instance.Reset();
-            
+
             Assert.AreEqual(0, instance.dictionary.Count);
         }
     }
