@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.Actions
 {
-    [CreateAssetMenu(fileName = "new SetBoolVar action", menuName = "AATools/GameState/Actions/SetBoolVar", order = 0)]
+    [CreateAssetMenu(fileName = "new SetBoolVar action", menuName = "AATools/ScriptableObjects/GameState/Actions/SetBoolVar", order = 0)]
     public class SetBoolVar : Action
     {
         public BoolVar targetBoolVar;

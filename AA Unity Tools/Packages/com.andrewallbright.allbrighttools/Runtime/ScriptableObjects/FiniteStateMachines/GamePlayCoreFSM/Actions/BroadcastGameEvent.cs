@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.Actions
 {
-    [CreateAssetMenu(fileName = "new broadcast game event", menuName = "AATools/GameState/Actions/BroadcastGameEvent",
+    [CreateAssetMenu(fileName = "new broadcast game event", menuName = "AATools/ScriptableObjects/GameState/Actions/BroadcastGameEvent",
         order = 0)]
     public class BroadcastGameEvent : Action
     {

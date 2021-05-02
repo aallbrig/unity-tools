@@ -2,6 +2,6 @@
 
 namespace ScriptableObjects.Events
 {
-    [CreateAssetMenu(fileName = "New game object event", menuName = "AATools/Events/GameObjectEvent")]
+    [CreateAssetMenu(fileName = "New game object event", menuName = "AATools/ScriptableObjects/Events/GameObjectEvent")]
     public class GameObjectEvent : OneObjectEvent<GameObject> {}
 }

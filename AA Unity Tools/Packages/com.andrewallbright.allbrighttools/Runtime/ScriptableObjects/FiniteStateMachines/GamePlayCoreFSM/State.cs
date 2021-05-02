@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM
 {
-    [CreateAssetMenu(fileName = "new game state", menuName = "AATools/GameState/State", order = 0)]
+    [CreateAssetMenu(fileName = "new game state", menuName = "AATools/ScriptableObjects/GameState/State", order = 0)]
     public class State : ScriptableObject, IState
     {
         [Header("On Start")] public List<Action> startActions = new List<Action>();

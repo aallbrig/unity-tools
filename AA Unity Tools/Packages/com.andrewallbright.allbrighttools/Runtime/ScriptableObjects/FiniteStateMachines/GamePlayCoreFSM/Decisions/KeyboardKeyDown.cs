@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ScriptableObjects.FiniteStateMachines.GamePlayCoreFSM.Decisions
 {
-    [CreateAssetMenu(fileName = "new Keyboard Button Down", menuName = "AATools/GameState/Decisions/KeyboardKeyDown",
+    [CreateAssetMenu(fileName = "new Keyboard Button Down", menuName = "AATools/ScriptableObjects/GameState/Decisions/KeyboardKeyDown",
         order = 0)]
     public class KeyboardKeyDown : Decision
     {
